@@ -1,0 +1,186 @@
+{
+    "UFPE-CC": {
+        "permanente": 120,
+        "colaborador": 22
+    },
+    "UERN-UFERSA-CC": {
+        "permanente": 41,
+        "colaborador": 16
+    },
+    "UFMS-UFG-CC": {
+        "permanente": 125,
+        "colaborador": 17
+    },
+    "UFPB-JP-I": {
+        "permanente": 45,
+        "colaborador": 11
+    },
+    "UNESP-SJRP-CA": {
+        "permanente": 58,
+        "colaborador": 24
+    },
+    "FUFPI-CC": {
+        "permanente": 41,
+        "colaborador": 3
+    },
+    "FUFSE-CC": {
+        "permanente": 45,
+        "colaborador": 17
+    },
+    "FURG-C": {
+        "permanente": 64,
+        "colaborador": 3
+    },
+    "IFCE-CC": {
+        "permanente": 45,
+        "colaborador": 6
+    },
+    "IME-SC": {
+        "permanente": 29,
+        "colaborador": 3
+    },
+    "PUC-MG-I": {
+        "permanente": 34,
+        "colaborador": 2
+    },
+    "UDESC-CA": {
+        "permanente": 44,
+        "colaborador": 3
+    },
+    "UECE-CC": {
+        "permanente": 34,
+        "colaborador": 1
+    },
+    "UEL-CC": {
+        "permanente": 30,
+        "colaborador": 11
+    },
+    "UEM-CC": {
+        "permanente": 42,
+        "colaborador": 8
+    },
+    "UFABC-CC": {
+        "permanente": 115,
+        "colaborador": 25
+    },
+    "UFAL-I": {
+        "permanente": 48,
+        "colaborador": 15
+    },
+    "UFBA-CC": {
+        "permanente": 95,
+        "colaborador": 27
+    },
+    "UFCG-CC": {
+        "permanente": 92,
+        "colaborador": 28
+    },
+    "UFES-I": {
+        "permanente": 83,
+        "colaborador": 7
+    },
+    "UFG-DCC": {
+        "permanente": 95,
+        "colaborador": 7
+    },
+    "UFJF-CC": {
+        "permanente": 36,
+        "colaborador": 14
+    },
+    "UFLA-CC": {
+        "permanente": 37,
+        "colaborador": 6
+    },
+    "UFMA-CC": {
+        "permanente": 36,
+        "colaborador": 10
+    },
+    "UFMS-CC": {
+        "permanente": 61,
+        "colaborador": 14
+    },
+    "UFOP-CC": {
+        "permanente": 47,
+        "colaborador": 9
+    },
+    "UFPA-CCD": {
+        "permanente": 58,
+        "colaborador": 8
+    },
+    "UFPEL-C": {
+        "permanente": 60,
+        "colaborador": 19
+    },
+    "UFRJ-I": {
+        "permanente": 81,
+        "colaborador": 8
+    },
+    "UFRPE-IA": {
+        "permanente": 55,
+        "colaborador": 13
+    },
+    "UFSCAR-CC": {
+        "permanente": 136,
+        "colaborador": 36
+    },
+    "UFSM-CC": {
+        "permanente": 98,
+        "colaborador": 2
+    },
+    "UFU-CC": {
+        "permanente": 90,
+        "colaborador": 7
+    },
+    "UFV-CC": {
+        "permanente": 40,
+        "colaborador": 9
+    },
+    "UNIFACCAMP-CC": {
+        "permanente": 32,
+        "colaborador": 0
+    },
+    "UNIFACS-SC": {
+        "permanente": 33,
+        "colaborador": 0
+    },
+    "UNIFEI-CTC": {
+        "permanente": 30,
+        "colaborador": 17
+    },
+    "UNIFESP-CC": {
+        "permanente": 59,
+        "colaborador": 6
+    },
+    "UNIFOR-IA": {
+        "permanente": 48,
+        "colaborador": 1
+    },
+    "UNIRIO-DI": {
+        "permanente": 46,
+        "colaborador": 6
+    },
+    "UNISINOS-CA": {
+        "permanente": 36,
+        "colaborador": 2
+    },
+    "UNIVALI-CA": {
+        "permanente": 38,
+        "colaborador": 0
+    },
+    "UPE-EC": {
+        "permanente": 41,
+        "colaborador": 13
+    },
+    "USP-RP-CA": {
+        "permanente": 46,
+        "colaborador": 0
+    },
+    "USP-SI": {
+        "permanente": 52,
+        "colaborador": 9
+    },
+    "UTFPR-CC": {
+        "permanente": 38,
+        "colaborador": 2
+    }
+}
