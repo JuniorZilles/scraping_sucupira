@@ -1,185 +1,189 @@
 {
-    "UFPE-CC": {
+    "UFPE-CC-4": {
         "permanente": 120,
         "colaborador": 22
     },
-    "UERN-UFERSA-CC": {
+    "UERN-UFERSA-CC-3": {
         "permanente": 41,
         "colaborador": 16
     },
-    "UFMS-UFG-CC": {
+    "UFMS-UFG-CC-4": {
         "permanente": 125,
         "colaborador": 17
     },
-    "UFPB-JP-I": {
+    "UFPB-JP-I-4": {
         "permanente": 45,
         "colaborador": 11
     },
-    "UNESP-SJRP-CA": {
+    "UNESP-SJRP-CA-4": {
         "permanente": 58,
         "colaborador": 24
     },
-    "FUFPI-CC": {
+    "FUFPI-CC-3": {
         "permanente": 41,
         "colaborador": 3
     },
-    "FUFSE-CC": {
+    "FUFSE-CC-3": {
         "permanente": 45,
         "colaborador": 17
     },
-    "FURG-C": {
+    "FURG-EC-3": {
         "permanente": 64,
         "colaborador": 3
     },
-    "IFCE-CC": {
+    "IFCE-CC-3": {
         "permanente": 45,
         "colaborador": 6
     },
-    "IME-SC": {
+    "IME-SC-3": {
         "permanente": 29,
         "colaborador": 3
     },
-    "PUC-MG-I": {
+    "PUC-MG-I-4": {
         "permanente": 34,
         "colaborador": 2
     },
-    "UDESC-CA": {
+    "UDESC-CA-3": {
         "permanente": 44,
         "colaborador": 3
     },
-    "UECE-CC": {
+    "UECE-CC-4": {
         "permanente": 34,
         "colaborador": 1
     },
-    "UEL-CC": {
+    "UEL-CC-3": {
         "permanente": 30,
         "colaborador": 11
     },
-    "UEM-CC": {
+    "UEM-CC-4": {
         "permanente": 42,
         "colaborador": 8
     },
-    "UFABC-CC": {
+    "UFABC-CC-4": {
         "permanente": 115,
         "colaborador": 25
     },
-    "UFAL-I": {
+    "UFAL-I-3": {
         "permanente": 48,
         "colaborador": 15
     },
-    "UFBA-CC": {
+    "UFBA-CC-4": {
         "permanente": 95,
         "colaborador": 27
     },
-    "UFCG-CC": {
+    "UFCG-CC-4": {
         "permanente": 92,
         "colaborador": 28
     },
-    "UFES-I": {
+    "UFES-I-4": {
         "permanente": 83,
         "colaborador": 7
     },
-    "UFG-DCC": {
+    "UFG-DCC-4": {
         "permanente": 95,
         "colaborador": 7
     },
-    "UFJF-CC": {
+    "UFJF-CC-3": {
         "permanente": 36,
         "colaborador": 14
     },
-    "UFLA-CC": {
+    "UFLA-CC-3": {
         "permanente": 37,
         "colaborador": 6
     },
-    "UFMA-CC": {
+    "UFMA-CC-3": {
         "permanente": 36,
         "colaborador": 10
     },
-    "UFMS-CC": {
+    "UFMS-CC-4": {
         "permanente": 61,
         "colaborador": 14
     },
-    "UFOP-CC": {
+    "UFOP-CC-4": {
         "permanente": 47,
         "colaborador": 9
     },
-    "UFPA-CCD": {
+    "UFPA-CCD-4": {
         "permanente": 58,
         "colaborador": 8
     },
-    "UFPEL-C": {
+    "UFPEL-C-4": {
         "permanente": 60,
         "colaborador": 19
     },
-    "UFRJ-I": {
+    "UFRJ-I-4": {
         "permanente": 81,
         "colaborador": 8
     },
-    "UFRPE-IA": {
+    "UFRPE-IA-3": {
         "permanente": 55,
         "colaborador": 13
     },
-    "UFSCAR-CC": {
-        "permanente": 136,
-        "colaborador": 36
+    "UFSCAR-CC-4": {
+        "permanente": 100,
+        "colaborador": 29
     },
-    "UFSM-CC": {
+    "UFSCAR-CC-3": {
+        "permanente": 36,
+        "colaborador": 7
+    },
+    "UFSM-CC-3": {
         "permanente": 98,
         "colaborador": 2
     },
-    "UFU-CC": {
+    "UFU-CC-4": {
         "permanente": 90,
         "colaborador": 7
     },
-    "UFV-CC": {
+    "UFV-CC-4": {
         "permanente": 40,
         "colaborador": 9
     },
-    "UNIFACCAMP-CC": {
+    "UNIFACCAMP-CC-3": {
         "permanente": 32,
         "colaborador": 0
     },
-    "UNIFACS-SC": {
+    "UNIFACS-SC-3": {
         "permanente": 33,
         "colaborador": 0
     },
-    "UNIFEI-CTC": {
+    "UNIFEI-CTC-3": {
         "permanente": 30,
         "colaborador": 17
     },
-    "UNIFESP-CC": {
+    "UNIFESP-CC-4": {
         "permanente": 59,
         "colaborador": 6
     },
-    "UNIFOR-IA": {
+    "UNIFOR-IA-4": {
         "permanente": 48,
         "colaborador": 1
     },
-    "UNIRIO-DI": {
+    "UNIRIO-DI-4": {
         "permanente": 46,
         "colaborador": 6
     },
-    "UNISINOS-CA": {
+    "UNISINOS-CA-4": {
         "permanente": 36,
         "colaborador": 2
     },
-    "UNIVALI-CA": {
+    "UNIVALI-CA-3": {
         "permanente": 38,
         "colaborador": 0
     },
-    "UPE-EC": {
+    "UPE-EC-4": {
         "permanente": 41,
         "colaborador": 13
     },
-    "USP-RP-CA": {
+    "USP-RP-CA-3": {
         "permanente": 46,
         "colaborador": 0
     },
-    "USP-SI": {
+    "USP-SI-4": {
         "permanente": 52,
         "colaborador": 9
     },
-    "UTFPR-CC": {
+    "UTFPR-CC-3": {
         "permanente": 38,
         "colaborador": 2
     }
