@@ -14,22 +14,22 @@ def download_producoes():
             viewstate = suc.requestPageGetCookies()
             universityBody = suc.buildGetUniversityBody(
                 periodo, consulta, viewstate)
-            html = suc.requestPageWithBody(universityBody)
+            html, viewstate  = suc.requestPageWithBody(universityBody)
             universityId, consulta = suc.transformToUniversityid(
                 html, consulta)
             programBody = suc.buildGetProgramBody(
                 periodo, universityId, consulta, viewstate)
-            html = suc.requestPageWithBody(programBody)
+            html, viewstate  = suc.requestPageWithBody(programBody)
             progrmList = suc.transformToProgramid(html, prog, action)
             for progrmId in progrmList:
                 consultaBody = suc.buildGetConsultaBody(
                     periodo, universityId, consulta, progrmId, viewstate)
-                html = suc.requestPageWithBody(consultaBody)
+                html, viewstate  = suc.requestPageWithBody(consultaBody)
                 modalidade = suc.transformToModalidade(html)
                 if modalidade != 'PROFISSIONAL' and modalidade != None:
                     producoesBody = suc.buildGetProducoesBody(
                         periodo, universityId, consulta, progrmId, viewstate)
-                    html = suc.requestPageWithBody(producoesBody)
+                    html, viewstate  = suc.requestPageWithBody(producoesBody)
                     xlsBody = suc.buildGetXLSXBody(
                         periodo, universityId, consulta, progrmId, viewstate)
                     suc.requestFileBody(
@@ -62,7 +62,10 @@ def download_docentes():
                     docentesBody = suc.buildGetDocentesBody(
                         periodo, universityId, consulta, progrmId, viewstate)
                     table = suc.requesPartialWithBody(docentesBody)
-                    listaConteudo = suc.handleTable(listaConteudo, programa['termo'].replace('/', '-'), table)
+                    nome = programa['termo'].replace('/', '-')
+                    if "UFSCAR" in nome:
+                        nome = nome +"-4" if progrmId == 928 else nome +"-3"
+                    listaConteudo = suc.handleTable(listaConteudo, nome, table)
                 
                     # xlsBody = suc.buildGetXLSXDocentesBody(
                     #     periodo, universityId, consulta, progrmId, viewstate)
