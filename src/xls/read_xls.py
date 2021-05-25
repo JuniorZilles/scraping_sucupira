@@ -9,8 +9,7 @@ from .map_to import mappingto
 def getPath(pasta):
     lista = []
     for nome in os.listdir(pasta):
-        if 'UFSCAR' in nome:
-            lista.append({"caminho": os.path.join(pasta, nome), "nome":nome.replace('.xls', "")})
+        lista.append({"caminho": os.path.join(pasta, nome), "nome":nome.replace('.xls', "")})
     return lista
 
 def read_producoes():
