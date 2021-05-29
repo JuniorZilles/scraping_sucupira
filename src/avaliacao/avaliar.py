@@ -1,6 +1,6 @@
 import json
 from bs4 import BeautifulSoup
-from .plot import permandent, permandentColaborador, totais, permandentApenasA
+from .plot import permandent, permandentColaborador, totais, permandentApenasA, apenasA
 
 
 def ler_json(name: str) -> dict:
@@ -36,6 +36,8 @@ def avaliar():
     permandentApenasA(new,22, "Trabalhos em Anais + Periódicos Ponderados Por Qualis A e Por Orientador Permanente")
     new2 = sorted(contentPer.items(), key=lambda a: a[1]['proporcao'])
     totais(new2,36, 'Trabalhos em Anais + Periódicos Ponderados Por Qualis')
+    new3 = sorted(contentPerA.items(), key=lambda a: a[1]['proporcao'])
+    apenasA(new3,31, 'Trabalhos em Anais + Periódicos Ponderados Por Qualis A')
     
 
 def getSomaPeriConf(conf:dict, perio:dict) -> dict:

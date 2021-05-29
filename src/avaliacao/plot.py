@@ -76,6 +76,31 @@ def permandentApenasA(indices: list, posicao:int, titulo:str):
     plt.savefig('grafico_perm.png', dpi=1920, orientation='portrait')
     plt.show()
 
+def apenasA(indices: list, posicao:int, titulo:str):
+    data = []
+    for x in indices:
+        d = []
+        d.append(x[0])
+        for j in range(4, 0, -1):
+            d.append(x[1]['qA'+str(j)])
+        print(d)
+        data.append(d)
+    df = pd.DataFrame(data,
+                      columns=['Programas',  'A4', 'A3', 'A2', 'A1'])
+
+    ax = df.plot.bar(x='Programas', stacked=True,
+            title=titulo)
+    ax.add_patch(Rectangle(xy= ax.containers[0][posicao].get_xy(), 
+                         width=ax.containers[0][posicao].get_width(),
+                        height=ax.containers[0][posicao].get_height() 
+                              +ax.containers[1][posicao].get_height()
+                              +ax.containers[2][posicao].get_height()
+                              +ax.containers[3][posicao].get_height(), 
+                       fc='none', ec='red', linewidth=2))
+    plt.grid(True)
+    plt.savefig('grafico_totais_a.png', dpi=1920, orientation='portrait')
+    plt.show()
+
 
 def permandentColaborador(indices: list, posicao:int, titulo:str):
     data = []
