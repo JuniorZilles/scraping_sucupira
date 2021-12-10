@@ -15,37 +15,48 @@ def avaliar():
     qualis = getQualis(confer)
     perion = getPeridicos()
     som = getSomaPeriConf(qualis, perion)
-    #qualis = getQualisAno(confer)
+    qualisAno = getQualisAno(confer)
     content = calcTotalPermananentes(qualis, docent)
     contentPer = calcTotalPermananentes(som, docent)
     contentPerA = calcTotalPermananentesA(som, docent)
-    #content = calcTotalPermananentesAno(qualis, docent)
-    #writeFile(content, 'sums')
-    new = sorted(content.items(),key= lambda a: a[1]['totalPropPerm'])
-    permandent(new, 32, "Trabalhos em Anais Ponderados Por Qualis e Por Orientador Permanente")
-    new1 = sorted(content.items(), key=lambda a: a[1]['totalPermColab'])
-    permandentColaborador(new1, 36, 'Trabalhos em Anais Ponderados Por Qualis e Por Orientador (Permanente + Colaborador)')
-    new2 = sorted(content.items(), key=lambda a: a[1]['proporcao'])
-    totais(new2, 38, 'Trabalhos em Anais Ponderados Por Qualis')
+    contentAno = calcTotalPermananentesAno(qualisAno, docent)
 
-    new = sorted(contentPer.items(),key= lambda a: a[1]['totalPropPerm'])
-    permandent(new,27, "Trabalhos em Anais + Periódicos Ponderados Por Qualis e Por Orientador Permanente")
+    new = sorted(content.items(), key=lambda a: a[1]['totalPropPerm'])
+    permandent(
+        new, 32, "Trabalhos em Anais Ponderados Por Qualis e Por Orientador Permanente")
+
+    new4 = sorted(content.items(), key=lambda a: a[1]['totalPermColab'])
+    permandentColaborador(
+        new4, 36, 'Trabalhos em Anais Ponderados Por Qualis e Por Orientador (Permanente + Colaborador)')
+
+    new5 = sorted(content.items(), key=lambda a: a[1]['proporcao'])
+    totais(new5, 38, 'Trabalhos em Anais Ponderados Por Qualis')
+
+    new6 = sorted(contentPer.items(), key=lambda a: a[1]['totalPropPerm'])
+    permandent(
+        new6, 27, "Trabalhos em Anais + Periódicos Ponderados Por Qualis e Por Orientador Permanente")
+
     new1 = sorted(contentPer.items(), key=lambda a: a[1]['totalPermColab'])
-    permandentColaborador(new1,36, 'Trabalhos em Anais + Periódicos Ponderados Por Qualis e Por Orientador (Permanente + Colaborador)')
-    new = sorted(contentPerA.items(),key= lambda a: a[1]['totalPropPerm'])
-    permandentApenasA(new,22, "Trabalhos em Anais + Periódicos Ponderados Por Qualis A e Por Orientador Permanente")
-    new2 = sorted(contentPer.items(), key=lambda a: a[1]['proporcao'])
-    totais(new2,36, 'Trabalhos em Anais + Periódicos Ponderados Por Qualis')
-    
+    permandentColaborador(
+        new1, 36, 'Trabalhos em Anais + Periódicos Ponderados Por Qualis e Por Orientador (Permanente + Colaborador)')
 
-def getSomaPeriConf(conf:dict, perio:dict) -> dict:
-    content= {}
+    new2 = sorted(contentPerA.items(), key=lambda a: a[1]['totalPropPerm'])
+    permandentApenasA(
+        new2, 22, "Trabalhos em Anais + Periódicos Ponderados Por Qualis A e Por Orientador Permanente")
+
+    new3 = sorted(contentPer.items(), key=lambda a: a[1]['proporcao'])
+    totais(new3, 36, 'Trabalhos em Anais + Periódicos Ponderados Por Qualis')
+
+
+def getSomaPeriConf(conf: dict, perio: dict) -> dict:
+    content = {}
     for c in conf.keys():
         if c in conf and c in perio:
             content[c] = {}
             for b in conf[c].keys():
                 content[c][b] = conf[c][b] + int(perio[c][b])
     return content
+
 
 def getPeridicos() -> dict:
     file = open("periodicos/contagem_qualis.html", "r")
@@ -101,18 +112,19 @@ def getQualis(confer: dict) -> dict:
         content[c]['total'] = total
     return content
 
+
 def getQualisAno(confer: dict) -> dict:
     content = {}
     for c in confer.keys():
         total = 0
         for x in confer[c]:
             if c not in content:
-                content[c] = {"2017":{"A1": 0, "A2": 0, "A3": 0, "A4": 0, "B1": 0,
-                              "B2": 0, "B3": 0, "B4": 0, "C": 0, "NF": 0}, 
-                              "2018":{"A1": 0, "A2": 0, "A3": 0, "A4": 0, "B1": 0,
+                content[c] = {"2017": {"A1": 0, "A2": 0, "A3": 0, "A4": 0, "B1": 0,
                               "B2": 0, "B3": 0, "B4": 0, "C": 0, "NF": 0},
-                              "2019":{"A1": 0, "A2": 0, "A3": 0, "A4": 0, "B1": 0,
-                              "B2": 0, "B3": 0, "B4": 0, "C": 0, "NF": 0}}
+                              "2018": {"A1": 0, "A2": 0, "A3": 0, "A4": 0, "B1": 0,
+                                       "B2": 0, "B3": 0, "B4": 0, "C": 0, "NF": 0},
+                              "2019": {"A1": 0, "A2": 0, "A3": 0, "A4": 0, "B1": 0,
+                                       "B2": 0, "B3": 0, "B4": 0, "C": 0, "NF": 0}}
             content[c][x['ano']][x['qualis']] += 1
             total += 1
         content[c].update({'total': total})
@@ -120,61 +132,67 @@ def getQualisAno(confer: dict) -> dict:
 
 
 def calcTotalPermananentes(qualis: dict, docentes: dict):
-    for c in qualis.keys():
+    content = qualis.copy()
+    for c in content.keys():
         pc = (docentes[c]['permanente']+docentes[c]['colaborador'])/3
         p = (docentes[c]['permanente'])/3
-    
-        qA1 = qualis[c]['A1'] * 1
-        qA2 = qualis[c]['A2']*0.875
-        qA3 = qualis[c]['A3']*0.75
-        qA4 = qualis[c]['A4']*0.625
-        qB1 = qualis[c]['B1']*0.5
-        qB2 = qualis[c]['B2']*0.2
-        qB3 = qualis[c]['B3']*0.1
-        qB4 = qualis[c]['B4']*0.05
-        qC = qualis[c]['C']*0
-        qNF = qualis[c]['NF']*0
+
+        qA1 = content[c]['A1'] * 1
+        qA2 = content[c]['A2']*0.875
+        qA3 = content[c]['A3']*0.75
+        qA4 = content[c]['A4']*0.625
+        qB1 = content[c]['B1']*0.5
+        qB2 = content[c]['B2']*0.2
+        qB3 = content[c]['B3']*0.1
+        qB4 = content[c]['B4']*0.05
+        qC = content[c]['C']*0
+        qNF = content[c]['NF']*0
         total = qA1 + qA2 + qA3 + qA4 + qB1 + qB2 + qB3 + qB4 + qC + qNF
         totalP = total/p
         totalPc = total/pc
-        qualis[c].update({
+        content[c].update({
             "qA1": qA1, "qA2": qA2, "qA3": qA3, "qA4": qA4, "qB1": qB1, "qB2": qB2, "qB3": qB3, "qB4": qB4, "qC": qC, "qNF": qNF, "proporcao": total, "totalPropPerm": totalP,
             "totalPermColab": totalPc, "permCola": pc, "perm": p})
-    return qualis
+    return content
+
 
 def calcTotalPermananentesA(qualis: dict, docentes: dict):
-    for c in qualis.keys():
+    content = qualis.copy()
+    for c in content.keys():
         p = (docentes[c]['permanente'])/3
-    
-        qA1 = qualis[c]['A1'] * 1
-        qA2 = qualis[c]['A2']*0.875
-        qA3 = qualis[c]['A3']*0.75
-        qA4 = qualis[c]['A4']*0.625
-    
+
+        qA1 = content[c]['A1'] * 1
+        qA2 = content[c]['A2']*0.875
+        qA3 = content[c]['A3']*0.75
+        qA4 = content[c]['A4']*0.625
+
         total = qA1 + qA2 + qA3 + qA4
         totalP = total/p
-        qualis[c].update({
+        content[c].update({
             "qA1": qA1, "qA2": qA2, "qA3": qA3, "qA4": qA4, "proporcao": total, "totalPropPerm": totalP,
-             "perm": p})
-    return qualis
+            "perm": p})
+    return content
 
-def calcTotalPermananentesAno(qualis: dict, docentes: dict):
-    for c in qualis.keys():
+
+def calcTotalPermananentesAno(qualis: dict):
+    content = qualis.copy()
+    for c in content.keys():
         for k in ['2017', '2018', '2019']:
-            qA1 = qualis[c][k]['A1'] * 1
-            qA2 = qualis[c][k]['A2']*0.875
-            qA3 = qualis[c][k]['A3']*0.75
-            qA4 = qualis[c][k]['A4']*0.625
-            qB1 = qualis[c][k]['B1']*0.5
-            qB2 = qualis[c][k]['B2']*0.2
-            qB3 = qualis[c][k]['B3']*0.1
-            qB4 = qualis[c][k]['B4']*0.05
-            qC = qualis[c][k]['C']*0
-            qNF = qualis[c][k]['NF']*0
+            qA1 = content[c][k]['A1'] * 1
+            qA2 = content[c][k]['A2']*0.875
+            qA3 = content[c][k]['A3']*0.75
+            qA4 = content[c][k]['A4']*0.625
+            qB1 = content[c][k]['B1']*0.5
+            qB2 = content[c][k]['B2']*0.2
+            qB3 = content[c][k]['B3']*0.1
+            qB4 = content[c][k]['B4']*0.05
+            qC = content[c][k]['C']*0
+            qNF = content[c][k]['NF']*0
             total = qA1 + qA2 + qA3 + qA4 + qB1 + qB2 + qB3 + qB4 + qC + qNF
-            qualis[c][k].update({
-                "qA1": qA1, "qA2": qA2, "qA3": qA3, "qA4": qA4, "qB1": qB1, "qB2": qB2, "qB3": qB3, "qB4": qB4, "qC": qC, "qNF": qNF, "total":total})
-    return qualis
+            content[c][k].update({
+                "qA1": qA1, "qA2": qA2, "qA3": qA3, "qA4": qA4, "qB1": qB1, "qB2": qB2, "qB3": qB3, "qB4": qB4, "qC": qC, "qNF": qNF, "total": total})
+    return content
+
 
 def writeFile(data: dict, name: str):
     a_file = open(name+".json", "w", encoding="UTF-8")
