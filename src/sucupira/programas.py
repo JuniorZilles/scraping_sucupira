@@ -1,3 +1,4 @@
+# atrelando o programa com a sigla usada na consulta
 programs = {
     "I": ["INFORMÁTICA"],
     "CC": ["CIÊNCIA DA COMPUTAÇÃO", "CIÊNCIAS DA COMPUTAÇÃO"],

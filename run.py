@@ -11,17 +11,17 @@ def main():
     print("Ler XLS conferências e gerar json com dados: 4")
     print("Ler XLS docentes e gerar json com dados: 5")
     print("Avaliar: 6")
-    #opcao = int(input())
-    #if opcao == 1:
-    import_qualis()
-    #elif opcao == 2:
-    download_producoes()
-    #elif opcao == 3:
-    download_docentes()
-    #elif opcao == 4:
-    read_producoes()
+    opcao = int(input())
+    if opcao == 1:
+        import_qualis()
+    elif opcao == 2:
+        download_producoes()
+    elif opcao == 3:
+        download_docentes()
+    elif opcao == 4:
+        read_producoes()
     #elif opcao == 5:
-    read_docentes()
-    #elif opcao == 6:
-    avaliar()
+    #read_docentes()
+    elif opcao == 6:
+        avaliar()
 main()
